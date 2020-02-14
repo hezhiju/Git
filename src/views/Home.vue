@@ -1,0 +1,46 @@
+<template>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png">
+    <div v-for="(e,i) in goods_list" :key="i">
+      <img :src="e.pict_url" style="width:20vw;height:20vw;float:left;" alt="">
+    </div>
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import request from "../request/api/index";
+
+export default {
+  name: 'home',
+  data () {
+    return {
+      goods_list: {name:'hzj'}
+    }
+  },
+  components: {
+  },
+  methods:{
+    getdata(){
+      request.user.shareshop().then(res => {
+          // eslint-disable-next-line no-console
+          console.log('------------首页----------');
+          // eslint-disable-next-line no-console
+          console.log(res);
+      })
+    }
+  },
+  mounted() {
+      this.getdata();
+      request.user.commodity({
+        page:1
+      }).then(res => {
+          // eslint-disable-next-line no-console
+          console.log('------------淘宝客返利-商品列表接口----------');
+          // eslint-disable-next-line no-console
+          console.log(res);
+          this.goods_list=res.data.data;
+      })
+  }
+}
+</script>
