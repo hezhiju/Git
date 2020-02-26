@@ -2,12 +2,12 @@
   <div class="about">
     <h1>This is an 2222222222222222222222 page</h1>
    
-  <video-player class="video-player vjs-custom-skin"
+  <!-- <video-player class="video-player vjs-custom-skin"
   style="min-width:200px;hieght:300px;border:1px solid red;"
                   ref="videoPlayer"
                   :playsinline="true"
                   :options="playerOptions"
-    ></video-player>
+    ></video-player> -->
 
   </div>
 </template>

@@ -21,7 +21,7 @@ export default {
   },
   mounted() {
      this.kk=this.$store.state.token;//获取state中的数据
-     this.$store.commit('newtoken','传参');//运行mutations中newtoken事件
+     this.$store.commit('newtoken','vuex');//运行mutations中newtoken事件
      
   },
   methods:{

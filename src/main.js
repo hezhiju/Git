@@ -4,13 +4,14 @@ import router from './router'
 import store from './store'
 import VConsole from 'vconsole'
 import './plugins/vant'
+import './plugins/rem'
+// import 'lib-flexible'
+// import 'amfe-flexible'
 
-
-import VideoPlayer from 'vue-video-player'
-require('vue-video-player/node_modules/video.js/dist/video-js.css')
-require('vue-video-player/src/custom-theme.css')
-
-Vue.use(VideoPlayer)
+// import VideoPlayer from 'vue-video-player'
+// require('vue-video-player/node_modules/video.js/dist/video-js.css')
+// require('vue-video-player/src/custom-theme.css')
+// Vue.use(VideoPlayer)
 
 
 // 关闭生产提示

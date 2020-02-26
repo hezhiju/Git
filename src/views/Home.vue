@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <div>{{this.$store.state.token}}</div>
     <div v-for="(e,i) in goods_list" :key="i">
       <img :src="e.pict_url" style="width:20vw;height:20vw;float:left;" alt="">
     </div>
@@ -9,7 +10,7 @@
 
 <script>
 // @ is an alias to /src
-import request from "../request/api/index";
+import request from "../request/index";
 
 export default {
   name: 'home',
@@ -28,10 +29,11 @@ export default {
           // eslint-disable-next-line no-console
           console.log(res);
       })
-    }
-  },
-  mounted() {
-      this.getdata();
+    },
+    git(){
+       this.$toast.loading({
+            message: '加载中'
+        })
       request.user.commodity({
         page:1
       }).then(res => {
@@ -40,7 +42,21 @@ export default {
           // eslint-disable-next-line no-console
           console.log(res);
           this.goods_list=res.data.data;
+          this.$toast.clear();
       })
+    }
+  },
+  mounted() {
+      this.getdata();
+      let t=0;
+      setInterval(()=>{
+        t++;
+        if(t==2){
+          this.git();
+        }
+      },1000);
+      
+      
   }
 }
 </script>
