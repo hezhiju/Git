@@ -1,9 +1,16 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <div>{{this.$store.state.token}}</div>
+    <div  uk-scrollspy="cls: uk-animation-slide-right; repeat: true">{{this.$store.state.token}}</div>
     <div v-for="(e,i) in goods_list" :key="i">
       <img :src="e.pict_url" style="width:20vw;height:20vw;float:left;" alt="">
+    </div>
+    <div>
+        <div>
+            <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
     </div>
   </div>
 </template>

@@ -13,7 +13,8 @@ const routes = [
   {
     path: '/wexin',
     name: 'wexin',
-    component: () => import(/* webpackChunkName: "weixin" */ '../views/wexin.vue')
+    component: () => import(/* webpackChunkName: "weixin" */ '../views/wexin.vue'),
+    meta:{token:'获取路由配置中的meta数据'}
   },
   {
     path: '/vuex',

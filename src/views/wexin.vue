@@ -12,7 +12,7 @@
 <van-button type="info">信息按钮</van-button>
 <van-button type="warning">警告按钮</van-button>
 <van-button type="danger">危险按钮</van-button>
-<div class="div"></div>
+<div class="div">{{meta}}</div>
   </div>
 </template>
 
@@ -27,10 +27,15 @@ export default {
   data(){
     return{
       text:'',
-      fileList:[]
+      fileList:[],
+      meta:{},
     }
   },
   mounted() {
+    // eslint-disable-next-line no-console
+    console.log("路由中的数据");
+    // eslint-disable-next-line no-console
+    console.log(this.$route.meta);
     this.text=process.env.NODE_ENV;
       request.user.share().then(res => {
           // eslint-disable-next-line no-console

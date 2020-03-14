@@ -5,6 +5,15 @@ import store from './store'
 import VConsole from 'vconsole'
 import './plugins/vant'
 import './plugins/rem'
+
+//引入UIkit框架移动端
+import UIkit from './plugins/uikit'
+Vue.use(UIkit)
+
+//引入滚动动画插件
+// import scrollReveal from 'scrollreveal';
+// Vue.prototype.$scroll = new scrollReveal({reset: true});
+
 // import 'lib-flexible'
 // import 'amfe-flexible'
 
