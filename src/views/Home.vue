@@ -12,6 +12,14 @@
             </div>
         </div>
     </div>
+    <div class="div div1">1</div>
+    <div class="div div2">2</div>
+    <div class="div div3">3</div>
+    <ul>
+      <li @click="tab1">1平滑滚动到指定位置</li>
+      <li @click="tab2">2平滑滚动到指定位置</li>
+      <li @click="tab3">3平滑滚动到指定位置</li>
+    </ul>
   </div>
 </template>
 
@@ -29,6 +37,16 @@ export default {
   components: {
   },
   methods:{
+    // 平滑滚动到指定位置
+    tab1() {
+      document.getElementsByClassName('div1')[0].scrollIntoView({ block: 'start',behavior: 'smooth' });
+    },
+    tab2() {
+      document.getElementsByClassName('div2')[0].scrollIntoView({ block: 'start',behavior: 'smooth' });
+    },
+    tab3() {
+      document.getElementsByClassName('div3')[0].scrollIntoView({ block: 'start',behavior: 'smooth' });
+    },
     getdata(){
       request.user.shareshop().then(res => {
           // eslint-disable-next-line no-console
@@ -67,3 +85,31 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .div{
+    border:1px solid yellowgreen;
+    height:1800px;
+    font-size: 40px;
+    color:#fff;
+  }
+  .div1{
+    background: rgb(145, 120, 170);
+  }
+  .div2{
+    background: rgb(106, 150, 163);
+  }
+  .div3{
+    background: rgb(194, 153, 153);
+  }
+  ul{
+    position: fixed;
+    top:40%;
+    right:10px;
+  }
+  li{
+    padding:20px 8px;
+    background: red;
+    margin-top: 10px;
+  }
+</style>

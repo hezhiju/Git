@@ -32,10 +32,6 @@ export default {
     }
   },
   mounted() {
-    // eslint-disable-next-line no-console
-    console.log("路由中的数据");
-    // eslint-disable-next-line no-console
-    console.log(this.$route.meta);
     this.text=process.env.NODE_ENV;
       request.user.share().then(res => {
           // eslint-disable-next-line no-console
@@ -88,7 +84,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #text{
   color:red !important;
   font-size: 32px;

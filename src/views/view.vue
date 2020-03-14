@@ -1,25 +1,46 @@
 <template>
-  <div id="app" class="app">
-    <div v-if="routeData.header" style="height:64px;background:yellow;position:fixed;top:0;left:0;width:100vw;z-index:1000;">
-      
-        <van-nav-bar :title="routeData.title"
-                     :left-text="routeData.hideBackButton ? '' : '返回'"
-                     v-if="routeData.showHeader"
-                     :left-arrow="!routeData.hideBackButton"
-                     @click-left="back"
-                     fixed
-                     :z-index="999"/>
-    </div>
+  <div class="view">
     <transition :name="transitionName">
-      <router-view class="bodyd" :style="routeData.header&&'margin-top:64px;'"/>
+        <router-view class="body"/>
     </transition>
+    <div id="nav">
+      <router-link to="/home">Home</router-link>|
+      <router-link to="/wexin">wexin</router-link>|
+      <router-link to="/vuex">vuex</router-link>
+    </div>
   </div>
 </template>
 
 <style>
-.bodyd{
-  min-height:100vh;
+html{
+    background: #ddd;
 }
+.body{
+    border:1px solid darkcyan;
+    min-height: 100%;
+}
+
+#nav {
+  padding: 30px;
+  background: red;
+  height:50px;
+  position: fixed;
+  width:100vw;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+
 
 
 .slide-right-enter-active,
@@ -27,7 +48,7 @@
  .slide-left-enter-active,
  .slide-left-leave-active {
    will-change: transform;
-   transition: all 500ms;
+   transition: all 500ms ease;
    position: absolute; 
  }.slide-right-enter {
    opacity: 0;
@@ -42,10 +63,13 @@
    opacity: 0;
    transform: translate3d(-100%, 0, 0);
  }
+
+
 </style>
 
 <script>
 
+import J from '../plugins/scrollReveat_css'
 export default {
     name: 'app',
     data (){
@@ -53,13 +77,8 @@ export default {
         transitionName:''
       }
     },
-    computed: {
-      routeData() {
-          return this.$route.meta
-      }
-    },
     mounted() {
-     
+        J.ScrollCss();
     },
     watch: {
       // 使用watch 监听$router的变化
