@@ -22,7 +22,7 @@ html{
 
 #nav {
   padding: 30px;
-  background: red;
+  background: yellow;
   height:50px;
   position: fixed;
   width:100vw;

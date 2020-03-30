@@ -8,21 +8,22 @@ const routes = [
     path: '/',
     name: 'view',
     component: () => import(/* webpackChunkName: "view" */ '../views/view.vue'),
+    redirect: '/home',
     children: [
       {
-        path: '/home',
+        path: 'home',
         name: 'home',
         component: () => import(/* webpackChunkName: "weixin" */ '../views/Home.vue'),
         meta:{index:1}
       },
       {
-        path: '/wexin',
+        path: 'wexin',
         name: 'wexin',
         component: () => import(/* webpackChunkName: "weixin" */ '../views/wexin.vue'),
         meta:{header:true,index:2}
       },
       {
-        path: '/vuex',
+        path: 'vuex',
         name: 'vuex',
         component: () => import(/* webpackChunkName: "vuex" */ '../views/vuex.vue'),
         meta:{index:3}
@@ -44,7 +45,11 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  // 路由跳转后页面滚动到顶部
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 })
 
 //全局路由守卫

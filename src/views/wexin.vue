@@ -13,6 +13,8 @@
 <van-button type="warning">警告按钮</van-button>
 <van-button type="danger">危险按钮</van-button>
 <div class="div">{{meta}}</div>
+<div class="div"></div>
+<div class="div"></div>
   </div>
 </template>
 
@@ -93,6 +95,7 @@ export default {
   width:375px;
   height:375px;
   background: red;
+  margin-top: 10px;
 
 }
 
