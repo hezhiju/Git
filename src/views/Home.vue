@@ -12,9 +12,24 @@
             </div>
         </div>
     </div>
-    <div class="div div1">1</div>
-    <div class="div div2">2</div>
-    <div class="div div3">3</div>
+    <div class="div div1">
+      <iframe src="http://www.jq22.com/yanshi22593" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="div div2">
+      <iframe src="http://www.jq22.com/yanshi10471" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="div div3">
+      <iframe src="http://www.jq22.com/yanshi22736" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="div div4">
+      <iframe src="http://www.jq22.com/yanshi15518" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="div div4">
+      <iframe src="http://www.jq22.com/yanshi22793" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div class="div div4">
+      <iframe src="http://www.jq22.com/yanshi22603" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
     <ul>
       <li @click="tab1">1平滑滚动到指定位置</li>
       <li @click="tab2">2平滑滚动到指定位置</li>
@@ -89,12 +104,14 @@ export default {
 <style scoped>
   .div{
     border:1px solid yellowgreen;
-    height:1800px;
+    height:800px;
     font-size: 40px;
     color:#fff;
+    width:100vw;
   }
   .div1{
     background: rgb(145, 120, 170);
+    overflow: hidden;
   }
   .div2{
     background: rgb(106, 150, 163);

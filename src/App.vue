@@ -59,7 +59,6 @@ export default {
       }
     },
     mounted() {
-     
     },
     watch: {
       // 使用watch 监听$router的变化
@@ -72,6 +71,11 @@ export default {
           this.transitionName = 'slide-right';
         }
       }
+    },
+    created() {
+      // vue项目中打包完成后如何外部链接打开项目中的某个路由
+      alert(window.location.hash.slice(1));
+      this.$router.push({path: window.location.hash.slice(1)});
     }
 }
 </script>

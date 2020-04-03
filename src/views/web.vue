@@ -76,19 +76,21 @@
             <img :src="img" alt="" uk-cover>
             <p>要使图像覆盖其父元素，请将.uk-cover-container类添加到父元素，并将 uk-cover属性添加到图像。</p>
         </div>
-        <div class="uk-container" style="height:400px;background:red;width:1200px;"></div>
     </div>
 </template>
 
 <script>
 export default {
   name: 'web',
+  props: ['id'],
   data (){
     return {
         img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584186833858&di=46e95a335468fbe990f592ee7827f2f2&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F21%2F09%2F01200000026352136359091694357.jpg'
     }
   },
   mounted() {
+    // eslint-disable-next-line no-console
+    alert(this.$route.params.id);
   },
   methods:{
      

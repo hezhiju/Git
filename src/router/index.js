@@ -37,7 +37,7 @@ const routes = [
     meta:{header:true,index:4}
   },
   {
-    path: '/web',
+    path: '/web/:id',
     name: 'web',
     component: () => import(/* webpackChunkName: "vuex" */ '../views/web.vue'),
     meta:{header:true,index:5}

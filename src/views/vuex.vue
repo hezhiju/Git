@@ -3,7 +3,7 @@
       <h1>{{kk}}</h1>
       <p>{{this.$store.state.token}}</p>
       <router-link to="/about">About</router-link>
-      <router-link to="/web">PC端</router-link>
+      <router-link to="/web/123">PC端</router-link>
       <hr>
       <p>
         {{this.$store.getters.addtoken}}

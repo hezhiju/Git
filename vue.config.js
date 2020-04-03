@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: '/ccc/dist/',
+  publicPath: 'https://beta.ddgeyou.com/ccc/vue/',
   assetsDir: './'
 }
