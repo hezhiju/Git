@@ -41,10 +41,9 @@ const toLogin = () => {
 const errorHandle = (status, other) => {
     // 状态码判断
     switch (status) {
+        case 400: tip('请求错误(400)'); break;
         // 401: 未登录状态，跳转登录页
-        case 401:
-            toLogin();
-            break;
+        case 401: toLogin(); break;
         // 403 token过期
         // 清除token并跳转登录页
         case 403:
@@ -56,14 +55,18 @@ const errorHandle = (status, other) => {
             // }, 1000);
             break;
         // 404请求不存在
-        case 404:
-            tip('网络请求不存在'); 
-            break;
+        case 404: tip('请求出错(404)'); break;
+        case 408: tip('请求超时(408)'); break;
+        case 500: tip('服务器错误(500)'); break;
+        case 501: tip('服务未实现(501)'); break;
+        case 502: tip('网络错误(502)'); break;
+        case 503: tip('服务不可用(503)'); break;
+        case 504: tip('网络超时(504)'); break;
+        case 505: tip('HTTP版本不受支持(505)'); break;
         default:
             // eslint-disable-next-line no-console
             console.log(other);   
         }}
-
 // 创建axios实例
 var instance = axios.create({ timeout: 1000 * 12 });
 // 设置post请求头

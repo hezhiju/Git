@@ -74,6 +74,7 @@ export default {
     },
     created() {
       // vue项目中打包完成后如何外部链接打开项目中的某个路由
+      // https://beta.ddgeyou.com/ccc/vue/index.html#/web/123
       alert(window.location.hash.slice(1));
       this.$router.push({path: window.location.hash.slice(1)});
     }

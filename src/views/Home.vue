@@ -35,6 +35,7 @@
       <li @click="tab2">2平滑滚动到指定位置</li>
       <li @click="tab3">3平滑滚动到指定位置</li>
     </ul>
+    <img v-for="(item,index) in arr" :key="index" :src="item.file_path" alt="">
   </div>
 </template>
 
@@ -46,7 +47,8 @@ export default {
   name: 'home',
   data () {
     return {
-      goods_list: {name:'hzj'}
+      goods_list: {name:'hzj'},
+      arr: []
     }
   },
   components: {
@@ -67,34 +69,13 @@ export default {
           // eslint-disable-next-line no-console
           console.log('------------首页----------');
           // eslint-disable-next-line no-console
-          console.log(res);
+          console.log(res.data.data.hot_pro);
+          this.arr = res.data.data.hot_pro;
       })
     },
-    git(){
-       this.$toast.loading({
-            message: '加载中'
-        })
-      request.user.commodity({
-        page:1
-      }).then(res => {
-          // eslint-disable-next-line no-console
-          console.log('------------淘宝客返利-商品列表接口----------');
-          // eslint-disable-next-line no-console
-          console.log(res);
-          this.goods_list=res.data.data;
-          this.$toast.clear();
-      })
-    }
   },
   mounted() {
       this.getdata();
-      let t=0;
-      setInterval(()=>{
-        t++;
-        if(t==2){
-          this.git();
-        }
-      },1000);
       
       
   }
